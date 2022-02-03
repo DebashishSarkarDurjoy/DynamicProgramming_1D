@@ -10,10 +10,13 @@ int max_profit_dp(int *prices, int n) {
         for (int i = 0; i < len; i++) {
             int cut = i + 1;
             int current_ans = prices[i] + dp[len-cut];
+            cout << current_ans << " " << len << ", " << i << endl;
             ans = max(current_ans, ans);
         }
         dp[len] = ans;
     }
+
+    
 }
 
 int main(){
