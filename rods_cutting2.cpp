@@ -7,6 +7,7 @@ int max_profit_dp(int *prices, int n) {
 
     for (int len = 1; len <= n; len++) {
         int ans = INT_MIN;
+
         for (int i = 0; i < len; i++) {
             int cut = i + 1;
             int current_ans = prices[i] + dp[len-cut];
@@ -14,9 +15,10 @@ int max_profit_dp(int *prices, int n) {
         }
         dp[len] = ans;
     }
-
     return dp[n];
 }
+
+
 
 int main(){
 

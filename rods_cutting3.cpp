@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int max_profit_dp(int *prices, int n) {
@@ -14,17 +14,14 @@ int max_profit_dp(int *prices, int n) {
         }
         dp[len] = ans;
     }
-
     return dp[n];
 }
 
-int main(){
+int main(void) {
+    int prices[] = {3, 5, 8, 9, 10, 17, 17, 20};
+    int n = sizeof(prices)/sizeof(int);
 
-	int prices[] = {1, 5, 8, 9, 10, 17, 17, 20};
-	int n = sizeof(prices)/sizeof(int);
+    cout << max_profit_dp(prices, n) << endl;
 
-	cout<< max_profit_dp(prices,n)<<endl;
-
-
-	return 0;
+    return 0;
 }
