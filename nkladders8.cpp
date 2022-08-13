@@ -6,10 +6,8 @@ int nkLaddersTDDP(int c, int k, int *dp)
 {
     if (c == 0)
         return 1;
-    if (c < 0)
-        return 0;
-    if (dp[c] != 0)
-        return dp[c];
+    if (c < 0) return 0;
+    if (dp[c] != 0) return dp[c];
 
     int ans = 0;
     for (int i = 1; i <= k; i++)
