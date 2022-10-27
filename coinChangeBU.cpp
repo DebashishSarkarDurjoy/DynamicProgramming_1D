@@ -21,7 +21,7 @@ int minCoins(vector<int> coins, int target) {
 
 int main(void) {
     vector<int> coins = {1,3,4,7,10};
-    int target = 14;
+    int target = 16;
 
     cout << minCoins(coins, target) << endl;
 
