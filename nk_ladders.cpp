@@ -32,12 +32,27 @@ int countWaysTD(int n, int k, int lookup[]) {
     return ways;
 }
 
+int countWaysBU(int n, int k) {
+    int lookup[100] = { 0 };
+    lookup[0] = 1;
+    for (int i = 0; i <= n; i++) {
+        for (int j = 1; j <= k; j++) {
+            if (i - j >= 0) {
+                lookup[i] += lookup[i-j];
+            }
+        }
+    }
+    return lookup[n];
+}
+
 int main(void) {
     int n, k;
     cin >> n >> k;
     // cout << countWays(n, k)<< endl;
 
-    int lookup[100] = { 0 };
-    cout << countWaysTD(n, k, lookup) << endl;
+    // int lookup[100] = { 0 };
+    // cout << countWaysTD(n, k, lookup) << endl;
+    
+    cout << countWaysBU(n, k) << endl;
     return 0;
 }
